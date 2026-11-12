@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<sfo>
+	<value type="string" name="APP_VER">01.00</value>
+	<value type="integer" name="ATTRIBUTE">0</value>
+	<value type="integer" name="BOOTABLE">1</value>
+	<value type="string" name="CATEGORY">HG</value>
+	<value type="string" name="LICENSE">N64 - emulateur homebrew libre</value>
+	<value type="integer" name="PARENTAL_LEVEL">0</value>
+	<value type="string" name="PS3_SYSTEM_VER">03.4100</value>
+	<value type="integer" name="RESOLUTION">63</value>
+	<value type="integer" name="SOUND_FORMAT">279</value>
+	<value type="string" name="TITLE">N64 - Emulateur PS3</value>
+	<value type="string" name="TITLE_ID">NSIX00001</value>
+	<value type="string" name="VERSION">01.00</value>
+</sfo>

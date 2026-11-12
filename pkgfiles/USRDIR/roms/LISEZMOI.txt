@@ -1,0 +1,7 @@
+N64 - ROMS
+==========
+Aucun BIOS n'est necessaire. Copiez vos ROMs (.z64 recommande, .v64 et .n64
+acceptes) ici, ou dans /dev_usb000/n64/ sur une cle USB, puis :
+START > Options > Recharger les ROMs.
+Etape 1 : les ROMs sont lues et verifiees (en-tete, puce CIC, somme de
+controle). L'execution des jeux arrive aux etapes suivantes.
