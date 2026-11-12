@@ -1,0 +1,30 @@
+name: Compiler le PKG PS3
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: hldtux/ps3dev:latest
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v5
+
+      - name: Tests des ROMs et du processeur VR4300 (sur PC)
+        run: make soak
+
+      - name: Compiler les PKG
+        run: |
+          make pkg
+          ls -l *.pkg build/pkg/PARAM.SFO
+          # securite : un PARAM.SFO vide donne "Donnees endommagees" sur PS3
+          test "$(wc -c < build/pkg/PARAM.SFO)" -gt 200 || { echo "PARAM.SFO vide : verifier sfo.xml"; exit 1; }
+
+      # A INSTALLER sur PS3HEN / CFW : version finalisee
+      - name: Publier n64.gnpdrm.pkg (HEN / CFW)
+        uses: actions/upload-artifact@v4
+        with:
+          name: n64-HEN-CFW
+          path: n64.gnpdrm.pkg
